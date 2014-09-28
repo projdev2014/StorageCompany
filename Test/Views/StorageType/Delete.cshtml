@@ -1,0 +1,72 @@
+﻿@model StorageCompany.Models.StorageType
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>StorageType</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.maxWidth)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.maxWidth)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.maxLength)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.maxLength)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.maxHeight)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.maxHeight)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.maxWeight)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.maxWeight)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
