@@ -1,10 +1,10 @@
 ﻿@model StorageCompany.Models.Account
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = @StorageCompany.Ressources.StringsDispalyed.title_account_edit;
 }
 
-<h2>Edit</h2>
+<h2>@ViewBag.Title</h2>
 
 
 @using (Html.BeginForm())

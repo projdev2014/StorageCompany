@@ -10,7 +10,7 @@ namespace StorageCompany.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Message = "Home";
+            ViewBag.Message = Ressources.StringsDispalyed.title_home;
             return View("Index");
         }
 
@@ -18,7 +18,7 @@ namespace StorageCompany.Controllers
         // GET: /Order/
         public ActionResult Order()
         {
-            ViewBag.Message = "Order";
+            ViewBag.Message = Ressources.StringsDispalyed.title_order;
             return View("Order");
         }
 
@@ -26,7 +26,7 @@ namespace StorageCompany.Controllers
         // GET: /Inventory/
         public ActionResult Inventory()
         {
-            ViewBag.Message = "Inventory";
+            ViewBag.Message = Ressources.StringsDispalyed.title_inventory;
             return View("Inventory");
         }
 

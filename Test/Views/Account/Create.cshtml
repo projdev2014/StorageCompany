@@ -1,33 +1,31 @@
 ﻿@model StorageCompany.Models.Account
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = @StorageCompany.Ressources.StringsDispalyed.title_account_create;
 }
 
-<h2>Create</h2>
-
+<h2>@ViewBag.Title</h2>
 
 @using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>Account</h4>
         <hr />
         @Html.ValidationSummary(true)
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.name, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.name)
+        <div class="editor-label control-group">
+            <label class="control-label col-md-3" for="model => model.name">@StorageCompany.Ressources.StringsDispalyed.table_account_name</label>
+            <div class="col-md-9">
+                @Html.TextBoxFor(model => model.name, new { @class ="form-control"})
                 @Html.ValidationMessageFor(model => model.name)
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.entrepriseNumber, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.entrepriseNumber)
+            <label class="control-label col-md-3" form="model => model.entrepriseNumber">@StorageCompany.Ressources.StringsDispalyed.table_account_entrepriseNumber</label>
+            <div class="col-md-9">
+                @Html.TextBoxFor(model => model.entrepriseNumber, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.entrepriseNumber)
             </div>
         </div>

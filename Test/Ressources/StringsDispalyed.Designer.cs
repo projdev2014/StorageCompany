@@ -466,6 +466,51 @@ namespace StorageCompany.Ressources {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Création d&apos;un compte client.
+        /// </summary>
+        public static string title_account_create {
+            get {
+                return ResourceManager.GetString("title_account_create", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Suppression d&apos;un compte client.
+        /// </summary>
+        public static string title_account_delete {
+            get {
+                return ResourceManager.GetString("title_account_delete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Description d&apos;un compte client.
+        /// </summary>
+        public static string title_account_details {
+            get {
+                return ResourceManager.GetString("title_account_details", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Édition d&apos;un compte client.
+        /// </summary>
+        public static string title_account_edit {
+            get {
+                return ResourceManager.GetString("title_account_edit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Liste des comptes client.
+        /// </summary>
+        public static string title_account_index {
+            get {
+                return ResourceManager.GetString("title_account_index", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Encodage.
         /// </summary>
         public static string title_encoding {
@@ -493,11 +538,236 @@ namespace StorageCompany.Ressources {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Création d&apos;article.
+        /// </summary>
+        public static string title_item_create {
+            get {
+                return ResourceManager.GetString("title_item_create", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Suppression d&apos;article.
+        /// </summary>
+        public static string title_item_delete {
+            get {
+                return ResourceManager.GetString("title_item_delete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Description d&apos;article.
+        /// </summary>
+        public static string title_item_details {
+            get {
+                return ResourceManager.GetString("title_item_details", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Édition d&apos;article.
+        /// </summary>
+        public static string title_item_edit {
+            get {
+                return ResourceManager.GetString("title_item_edit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Liste des articles.
+        /// </summary>
+        public static string title_item_index {
+            get {
+                return ResourceManager.GetString("title_item_index", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Commande.
         /// </summary>
         public static string title_order {
             get {
                 return ResourceManager.GetString("title_order", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Création de paquet.
+        /// </summary>
+        public static string title_package_create {
+            get {
+                return ResourceManager.GetString("title_package_create", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Suppression de paquet.
+        /// </summary>
+        public static string title_package_delete {
+            get {
+                return ResourceManager.GetString("title_package_delete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Description de paquet.
+        /// </summary>
+        public static string title_package_details {
+            get {
+                return ResourceManager.GetString("title_package_details", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Édition de paquet.
+        /// </summary>
+        public static string title_package_edit {
+            get {
+                return ResourceManager.GetString("title_package_edit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Liste des paquets.
+        /// </summary>
+        public static string title_package_index {
+            get {
+                return ResourceManager.GetString("title_package_index", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Création de produit.
+        /// </summary>
+        public static string title_product_create {
+            get {
+                return ResourceManager.GetString("title_product_create", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Suppression de produit.
+        /// </summary>
+        public static string title_product_delete {
+            get {
+                return ResourceManager.GetString("title_product_delete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Description de produit.
+        /// </summary>
+        public static string title_product_details {
+            get {
+                return ResourceManager.GetString("title_product_details", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Édition de produit.
+        /// </summary>
+        public static string title_product_edit {
+            get {
+                return ResourceManager.GetString("title_product_edit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Liste des produits.
+        /// </summary>
+        public static string title_product_index {
+            get {
+                return ResourceManager.GetString("title_product_index", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Création d&apos;emplacement.
+        /// </summary>
+        public static string title_storage_create {
+            get {
+                return ResourceManager.GetString("title_storage_create", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Suppression d&apos;emplacement.
+        /// </summary>
+        public static string title_storage_delete {
+            get {
+                return ResourceManager.GetString("title_storage_delete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Description d&apos;emplacement.
+        /// </summary>
+        public static string title_storage_details {
+            get {
+                return ResourceManager.GetString("title_storage_details", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Édition d&apos;emplacement.
+        /// </summary>
+        public static string title_storage_edit {
+            get {
+                return ResourceManager.GetString("title_storage_edit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Liste des emplacements.
+        /// </summary>
+        public static string title_storage_index {
+            get {
+                return ResourceManager.GetString("title_storage_index", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Création de type d&apos;emplacement.
+        /// </summary>
+        public static string title_storageType_create {
+            get {
+                return ResourceManager.GetString("title_storageType_create", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Suppression de type d&apos;emplacement.
+        /// </summary>
+        public static string title_storageType_delete {
+            get {
+                return ResourceManager.GetString("title_storageType_delete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Description de type d&apos;emplacement.
+        /// </summary>
+        public static string title_storageType_details {
+            get {
+                return ResourceManager.GetString("title_storageType_details", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Édition de type d&apos;emplacement.
+        /// </summary>
+        public static string title_storageType_edit {
+            get {
+                return ResourceManager.GetString("title_storageType_edit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Listes  des types d&apos;emplacement.
+        /// </summary>
+        public static string title_storageType_index {
+            get {
+                return ResourceManager.GetString("title_storageType_index", resourceCulture);
             }
         }
     }

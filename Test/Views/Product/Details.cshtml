@@ -1,13 +1,12 @@
 ﻿@model StorageCompany.Models.Product
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = @StorageCompany.Ressources.StringsDispalyed.title_product_details;
 }
 
-<h2>Details</h2>
+<h2>@ViewBag.Title</h2>
 
 <div>
-    <h4>Product</h4>
 	<hr />
     <dl class="dl-horizontal">
         <dt>

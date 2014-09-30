@@ -4,6 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="~/Content/Images/warehouse.png" type="image/x-icon">
     <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
@@ -23,7 +24,7 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        @Html.ActionLink("Gestion de Stock", "Index", "Home", null, new { @class = "navbar-brand" })
+                        @Html.ActionLink(@StorageCompany.Ressources.StringsDispalyed.title, "Index", "Home", null, new { @class = "navbar-brand" })
                     </div>
 
                     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -32,7 +33,7 @@
                             <li>@Html.ActionLink(@StorageCompany.Ressources.StringsDispalyed.title_inventory, "Inventory", "Home")</li>
                             <li>@Html.ActionLink(@StorageCompany.Ressources.StringsDispalyed.title_order, "Order", "Home")</li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Encodage <span class="caret"></span></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">@StorageCompany.Ressources.StringsDispalyed.title_encoding <span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
                                 <li>@Html.ActionLink(@StorageCompany.Ressources.StringsDispalyed.table_account, "Index", "Account")</li>
                                 <li>@Html.ActionLink(@StorageCompany.Ressources.StringsDispalyed.table_storageType, "Index", "StorageType")</li>

@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<StorageCompany.Models.StorageType>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = @StorageCompany.Ressources.StringsDispalyed.title_product_index;
 }
 
-<h2>Index</h2>
+<h2>@ViewBag.Title</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")

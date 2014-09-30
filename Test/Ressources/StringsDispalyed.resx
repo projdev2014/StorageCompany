@@ -252,6 +252,21 @@
   <data name="title" xml:space="preserve">
     <value>Gestion de stock</value>
   </data>
+  <data name="title_account_create" xml:space="preserve">
+    <value>Création d'un compte client</value>
+  </data>
+  <data name="title_account_delete" xml:space="preserve">
+    <value>Suppression d'un compte client</value>
+  </data>
+  <data name="title_account_details" xml:space="preserve">
+    <value>Description d'un compte client</value>
+  </data>
+  <data name="title_account_edit" xml:space="preserve">
+    <value>Édition d'un compte client</value>
+  </data>
+  <data name="title_account_index" xml:space="preserve">
+    <value>Liste des comptes client</value>
+  </data>
   <data name="title_encoding" xml:space="preserve">
     <value>Encodage</value>
   </data>
@@ -261,7 +276,82 @@
   <data name="title_inventory" xml:space="preserve">
     <value>Inventaire</value>
   </data>
+  <data name="title_item_create" xml:space="preserve">
+    <value>Création d'article</value>
+  </data>
+  <data name="title_item_delete" xml:space="preserve">
+    <value>Suppression d'article</value>
+  </data>
+  <data name="title_item_details" xml:space="preserve">
+    <value>Description d'article</value>
+  </data>
+  <data name="title_item_edit" xml:space="preserve">
+    <value>Édition d'article</value>
+  </data>
+  <data name="title_item_index" xml:space="preserve">
+    <value>Liste des articles</value>
+  </data>
   <data name="title_order" xml:space="preserve">
     <value>Commande</value>
+  </data>
+  <data name="title_package_create" xml:space="preserve">
+    <value>Création de paquet</value>
+  </data>
+  <data name="title_package_delete" xml:space="preserve">
+    <value>Suppression de paquet</value>
+  </data>
+  <data name="title_package_details" xml:space="preserve">
+    <value>Description de paquet</value>
+  </data>
+  <data name="title_package_edit" xml:space="preserve">
+    <value>Édition de paquet</value>
+  </data>
+  <data name="title_package_index" xml:space="preserve">
+    <value>Liste des paquets</value>
+  </data>
+  <data name="title_product_create" xml:space="preserve">
+    <value>Création de produit</value>
+  </data>
+  <data name="title_product_delete" xml:space="preserve">
+    <value>Suppression de produit</value>
+  </data>
+  <data name="title_product_details" xml:space="preserve">
+    <value>Description de produit</value>
+  </data>
+  <data name="title_product_edit" xml:space="preserve">
+    <value>Édition de produit</value>
+  </data>
+  <data name="title_product_index" xml:space="preserve">
+    <value>Liste des produits</value>
+  </data>
+  <data name="title_storageType_create" xml:space="preserve">
+    <value>Création de type d'emplacement</value>
+  </data>
+  <data name="title_storageType_delete" xml:space="preserve">
+    <value>Suppression de type d'emplacement</value>
+  </data>
+  <data name="title_storageType_details" xml:space="preserve">
+    <value>Description de type d'emplacement</value>
+  </data>
+  <data name="title_storageType_edit" xml:space="preserve">
+    <value>Édition de type d'emplacement</value>
+  </data>
+  <data name="title_storageType_index" xml:space="preserve">
+    <value>Listes  des types d'emplacement</value>
+  </data>
+  <data name="title_storage_create" xml:space="preserve">
+    <value>Création d'emplacement</value>
+  </data>
+  <data name="title_storage_delete" xml:space="preserve">
+    <value>Suppression d'emplacement</value>
+  </data>
+  <data name="title_storage_details" xml:space="preserve">
+    <value>Description d'emplacement</value>
+  </data>
+  <data name="title_storage_edit" xml:space="preserve">
+    <value>Édition d'emplacement</value>
+  </data>
+  <data name="title_storage_index" xml:space="preserve">
+    <value>Liste des emplacements</value>
   </data>
 </root>
