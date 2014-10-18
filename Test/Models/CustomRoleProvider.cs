@@ -9,6 +9,7 @@ namespace StorageCompany.Models
 {
     public class CustomRoleProvider : RoleProvider
     {
+
         public override void AddUsersToRoles(string[] usernames, string[] roleNames)
         {
             throw new NotImplementedException();

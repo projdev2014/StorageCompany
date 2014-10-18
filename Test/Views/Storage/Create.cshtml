@@ -42,7 +42,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.usable, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.usable)
+                @Html.CheckBoxFor(model => model.usable, new { @checked = "checked" })
                 @Html.ValidationMessageFor(model => model.usable)
             </div>
         </div>

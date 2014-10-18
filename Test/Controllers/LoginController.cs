@@ -31,7 +31,10 @@ namespace StorageCompany.Controllers
                 if (isValid(user.username, user.password))
                 {
                     user = db.User.FirstOrDefault(u => u.username == user.username);
-                    FormsAuthentication.SetAuthCookie(user.firstname + " " + user.name, false);
+                    Roles.AddUserToRole(user.username, user.Role.name);
+                    Session["name"] = user.name;
+                    Session["firstname"] = user.firstname;
+                    FormsAuthentication.SetAuthCookie(user.username, false);
                     return RedirectToAction("index", "Home");
                 }
                 else

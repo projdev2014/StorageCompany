@@ -25,6 +25,7 @@ namespace StorageCompany.Models
         [StringLength(25)]
         public string name { get; set; }
 
+        [ScaffoldColumn(false)]
         public bool usable { get; set; }
 
         public virtual ICollection<Movement> Movement { get; set; }
