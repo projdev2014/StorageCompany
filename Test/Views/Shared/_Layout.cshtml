@@ -46,14 +46,21 @@
                         <div class="navbar-login">
                             @if (Request.IsAuthenticated)
                             {
-                                @Html.Encode(User.Identity.Name)
+                                @Html.Encode(User.Identity.Name)                              
+                                <span> | </span>
                                 @Html.ActionLink("Log Out", "Logout", "Login")
                             }
                             else
                             {
                                 @Html.ActionLink("Register", "Index", "User")
                                 <span> | </span>
-                                @Html.ActionLink("Log In", "Login", "Login")
+                                @Html.ActionLink("Log In", "Index", "Login")
+                            }
+                            @if (Request.IsAuthenticated)
+                            {
+                                @Html.Encode(User.Identity.IsAuthenticated)
+                                <span> | </span>
+                                @Html.Label("admin")
                             }
                         </div>
                     </div><!-- navbar-right-->

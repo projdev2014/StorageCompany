@@ -8,6 +8,7 @@ namespace StorageCompany.Controllers
 {
     public class HomeController : Controller
     {
+        [AllowAnonymous]
         public ActionResult Index()
         {
             ViewBag.Message = Ressources.StringsDispalyed.title_home;

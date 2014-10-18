@@ -30,18 +30,23 @@ namespace StorageCompany.Models
         public string city { get; set; }
 
         [StringLength(10)]
+        [Display(Name = "table_account_postalCode", ResourceType = typeof(Ressources.StringsDispalyed))]
         public string postalCode { get; set; }
 
         [StringLength(10)]
+        [Display(Name = "table_account_streetNumber", ResourceType = typeof(Ressources.StringsDispalyed))]
         public string streetNumber { get; set; }
 
         [StringLength(50)]
+        [Display(Name = "table_account_streetName", ResourceType = typeof(Ressources.StringsDispalyed))]
         public string streetName { get; set; }
 
         [StringLength(50)]
+        [Display(Name = "table_account_country", ResourceType = typeof(Ressources.StringsDispalyed))]
         public string country { get; set; }
 
         [StringLength(50)]
+        [Display(Name = "table_account_email", ResourceType = typeof(Ressources.StringsDispalyed))]
         [DataType(DataType.EmailAddress)]
         public string email { get; set; }
 

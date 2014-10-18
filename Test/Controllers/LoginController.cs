@@ -14,23 +14,25 @@ namespace StorageCompany.Controllers
     {
         private StorageEntityDataModel db = new StorageEntityDataModel();
 
+
         //
         // GET: /Login/
         [HttpGet]
-        public ActionResult Login()
+        public ActionResult Index()
         {
-            return View("Login");
+            return View();
         }
 
         [HttpPost]
-        public ActionResult Login(User user)
+        public ActionResult Index(User user)
         {
-            if(ModelState.IsValid)
+            if (user.username != "" && user.password != "")
             {
-                if(user.username == "user" && user.password == "test1234") // Simulate data store
+                if (isValid(user.username, user.password))
                 {
-                    FormsAuthentication.SetAuthCookie(user.username, false);
-                    return RedirectToAction("index", "home");
+                    user = db.User.FirstOrDefault(u => u.username == user.username);
+                    FormsAuthentication.SetAuthCookie(user.firstname + " " + user.name, false);
+                    return RedirectToAction("index", "Home");
                 }
                 else
                 {
@@ -38,41 +40,13 @@ namespace StorageCompany.Controllers
                 }
 
             }
-            return View("Login");
-        }
-
-        [HttpGet]
-        public ActionResult Registration()
-        {
-
-            ViewBag.roleId = new SelectList(db.Role, "id", "name");
-            return View();
-        }
-
-        [HttpPost]
-        public ActionResult Registration(User user)
-        {
-            if (ModelState.IsValid)
-            {
-                using (var db = new StorageEntityDataModel())
-                {
-                    var sysUser = db.User.Create();
-                    sysUser.password = GetMD5HashData(user.password);
-                    sysUser.name = user.name;
-                    sysUser.firstname = user.firstname;
-                    sysUser.roleId = user.roleId;
-
-                    db.User.Add(user);
-                    db.SaveChanges();   
-                }
-                return RedirectToAction("Index", "Home");
-            }
             return View();
         }
 
         public ActionResult Logout()
         {
-            return View();
+            FormsAuthentication.SignOut();
+            return RedirectToAction("index", "Home");
         }
 
         private bool isValid(string username, string password)
