@@ -14,9 +14,16 @@ namespace StorageCompany
                       "~/Content/Scripts/bootstrap.js",
                       "~/Content/Scripts/respond.js"));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include(
+            bundles.Add(new StyleBundle("~/bundles/css").Include(
                       "~/Content/Styles/bootstrap.css",
                       "~/Content/Styles/site.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
+                       "~/Content/Scripts/jquery.validate*"));
+
+            bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
+                        "~/Content/Scripts/modernizr-*"));
+
         }
     }
 }

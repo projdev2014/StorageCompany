@@ -5,7 +5,7 @@ namespace StorageCompany.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
 
-    public partial class StorageEntityDataModel : DbContext
+    public class StorageEntityDataModel : DbContext
     {
         public StorageEntityDataModel()
             : base("name=StorageEntityDataModel")
@@ -18,10 +18,11 @@ namespace StorageCompany.Models
         public virtual DbSet<Order> Order { get; set; }
         public virtual DbSet<Package> Package { get; set; }
         public virtual DbSet<Product> Product { get; set; }
+        public virtual DbSet<Role> Role { get; set; }
         public virtual DbSet<Status> Status { get; set; }
         public virtual DbSet<Storage> Storage { get; set; }
         public virtual DbSet<StorageType> StorageType { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
+        public virtual DbSet<User> User { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -97,6 +98,10 @@ namespace StorageCompany.Models
                 .WithRequired(e => e.Product)
                 .WillCascadeOnDelete(false);
 
+            modelBuilder.Entity<Role>()
+                .Property(e => e.name)
+                .IsUnicode(false);
+
             modelBuilder.Entity<Status>()
                 .Property(e => e.name)
                 .IsUnicode(false);
@@ -136,6 +141,22 @@ namespace StorageCompany.Models
                 .HasMany(e => e.Storage)
                 .WithRequired(e => e.StorageType)
                 .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<User>()
+                .Property(e => e.firstname)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<User>()
+                .Property(e => e.name)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<User>()
+                .Property(e => e.username)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<User>()
+                .Property(e => e.password)
+                .IsUnicode(false);
         }
     }
 }

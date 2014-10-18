@@ -7,7 +7,7 @@ namespace StorageCompany.Models
     using System.Data.Entity.Spatial;
 
     [Table("Package")]
-    public partial class Package
+    public class Package
     {
         public Package()
         {
@@ -20,16 +20,12 @@ namespace StorageCompany.Models
         [StringLength(25)]
         public string name { get; set; }
 
-        [Required]
         public int width { get; set; }
 
-        [Required]
         public int length { get; set; }
 
-        [Required]
         public int height { get; set; }
-        
-        [Required]
+
         public int weight { get; set; }
 
         public virtual ICollection<Product> Product { get; set; }

@@ -7,7 +7,7 @@ namespace StorageCompany.Models
     using System.Data.Entity.Spatial;
 
     [Table("Account")]
-    public partial class Account
+    public class Account
     {
         public Account()
         {
@@ -19,10 +19,13 @@ namespace StorageCompany.Models
 
         [Required]
         [StringLength(50)]
+        [Display(Name = "table_account_name", ResourceType = typeof(Ressources.StringsDispalyed))]
         public string name { get; set; }
 
+        [Display(Name = "table_account_entrepriseNumber", ResourceType = typeof(Ressources.StringsDispalyed))]
         public int? entrepriseNumber { get; set; }
 
+        [Display(Name = "table_account_city", ResourceType = typeof(Ressources.StringsDispalyed))]
         [StringLength(50)]
         public string city { get; set; }
 
@@ -39,9 +42,10 @@ namespace StorageCompany.Models
         public string country { get; set; }
 
         [StringLength(50)]
-        [RegularExpression(@"[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?", ErrorMessage="Adresse mail non valide")]
+        [DataType(DataType.EmailAddress)]
         public string email { get; set; }
 
+        [Display(Name = "table_account_intern", ResourceType = typeof(Ressources.StringsDispalyed))]
         public bool intern { get; set; }
 
         public virtual ICollection<Order> Order { get; set; }

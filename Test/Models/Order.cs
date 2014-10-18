@@ -7,7 +7,7 @@ namespace StorageCompany.Models
     using System.Data.Entity.Spatial;
 
     [Table("Order")]
-    public partial class Order
+    public class Order
     {
         public Order()
         {
@@ -16,13 +16,10 @@ namespace StorageCompany.Models
 
         public int id { get; set; }
 
-        [Required]
         public int accountSenderId { get; set; }
 
-        [Required]
         public int accountRecipientId { get; set; }
 
-        [Required]
         public DateTime dateAsked { get; set; }
 
         public DateTime? dateEstimated { get; set; }

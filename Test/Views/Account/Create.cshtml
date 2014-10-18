@@ -14,18 +14,18 @@
         <hr />
         @Html.ValidationSummary(true)
 
-        <div class="editor-label control-group">
-            <label class="control-label col-md-3" for="model => model.name">@StorageCompany.Ressources.StringsDispalyed.table_account_name</label>
-            <div class="col-md-9">
-                @Html.TextBoxFor(model => model.name, new { @class ="form-control"})
+        <div class="form-group">
+            @Html.LabelFor(model => model.name, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.name)
                 @Html.ValidationMessageFor(model => model.name)
             </div>
         </div>
 
         <div class="form-group">
-            <label class="control-label col-md-3" form="model => model.entrepriseNumber">@StorageCompany.Ressources.StringsDispalyed.table_account_entrepriseNumber</label>
+            @Html.LabelFor(model => model.entrepriseNumber, new { @class = "control-label col-md-2" })
             <div class="col-md-9">
-                @Html.TextBoxFor(model => model.entrepriseNumber, new { @class = "form-control" })
+                @Html.EditorFor(model => model.entrepriseNumber)
                 @Html.ValidationMessageFor(model => model.entrepriseNumber)
             </div>
         </div>

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="~/Content/Images/warehouse.png" type="image/x-icon">
     <title>@ViewBag.Title</title>
-    @Styles.Render("~/Content/css")
+    @Styles.Render("~/bundles/css")
 </head>
 <body>
     <div class="container">
@@ -42,12 +42,28 @@
                             </ul>
                         </li>
                     </ul>
-                </div><!-- /.navbar-collapse -->
-            </div><!-- /.container-fluid -->
+                    <div class="nav navbar-nav navbar-right">
+                        <div class="navbar-login">
+                            @if (Request.IsAuthenticated)
+                            {
+                                @Html.Encode(User.Identity.Name)
+                                @Html.ActionLink("Log Out", "Logout", "Login")
+                            }
+                            else
+                            {
+                                @Html.ActionLink("Register", "Index", "User")
+                                <span> | </span>
+                                @Html.ActionLink("Log In", "Login", "Login")
+                            }
+                        </div>
+                    </div><!-- navbar-right-->
+                </div><!-- navbar-collapse -->
+            </div><!-- container-fluid -->
         </div><!-- navigation -->
 
         <!-- Contenu de la page -->
         <div class="container body-content">
+                
             @RenderBody() <!-- Appel le contenu de la page -->
         </div><!-- body-content -->
     </div><!-- container -->

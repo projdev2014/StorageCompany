@@ -7,7 +7,7 @@ namespace StorageCompany.Models
     using System.Data.Entity.Spatial;
 
     [Table("Product")]
-    public partial class Product
+    public class Product
     {
         public Product()
         {
@@ -16,7 +16,6 @@ namespace StorageCompany.Models
 
         public int id { get; set; }
 
-        [Required]
         public int packageId { get; set; }
 
         [Required]

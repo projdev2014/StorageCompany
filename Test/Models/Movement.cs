@@ -7,23 +7,18 @@ namespace StorageCompany.Models
     using System.Data.Entity.Spatial;
 
     [Table("Movement")]
-    public partial class Movement
+    public class Movement
     {
         public int id { get; set; }
 
-        [Required]
         public int statusId { get; set; }
 
-        [Required]
         public int orderId { get; set; }
 
-        [Required]
         public int itemId { get; set; }
 
-        [Required]
         public int storageId { get; set; }
 
-        [Required]
         public DateTime dateDone { get; set; }
 
         public virtual Item Item { get; set; }

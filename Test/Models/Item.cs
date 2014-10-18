@@ -7,7 +7,7 @@ namespace StorageCompany.Models
     using System.Data.Entity.Spatial;
 
     [Table("Item")]
-    public partial class Item
+    public class Item
     {
         public Item()
         {
