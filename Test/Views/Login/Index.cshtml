@@ -13,6 +13,7 @@
     <div class="form-horizontal">
         <hr />
         @Html.ValidationSummary(true)
+        @ViewBag.errorMessage
 
         <div class="form-group">
             @Html.LabelFor(m => m.username, "username", new { @class = "control-label col-md-2" })

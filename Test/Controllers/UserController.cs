@@ -17,6 +17,7 @@ namespace StorageCompany.Controllers
         private StorageEntityDataModel db = new StorageEntityDataModel();
 
         // GET: /User/
+        [Authorize(Roles = "admin")]
         public ActionResult Index()
         {
             var user = db.User.Include(u => u.Role);
@@ -24,6 +25,7 @@ namespace StorageCompany.Controllers
         }
 
         // GET: /User/Details/5
+        [Authorize(Roles = "admin")]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -39,6 +41,7 @@ namespace StorageCompany.Controllers
         }
 
         // GET: /User/Create
+        [Authorize(Roles = "admin")]
         public ActionResult Create()
         {
             ViewBag.roleId = new SelectList(db.Role, "id", "name");
@@ -50,12 +53,13 @@ namespace StorageCompany.Controllers
         // plus de détails, voir  http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "admin")]
         public ActionResult Create([Bind(Include="id,firstname,name,username,password,roleId")] User user)
         {
             if (ModelState.IsValid)
             {
                 user.password = GetMD5HashData(user.password);
-                db.User.Add(user);
+                db.User.Add(user);            
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -65,6 +69,7 @@ namespace StorageCompany.Controllers
         }
 
         // GET: /User/Edit/5
+        [Authorize(Roles = "admin")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -85,6 +90,7 @@ namespace StorageCompany.Controllers
         // plus de détails, voir  http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "admin")]
         public ActionResult Edit([Bind(Include="id,firstname,name,username,password,roleId")] User user)
         {
             if (ModelState.IsValid)
@@ -99,6 +105,7 @@ namespace StorageCompany.Controllers
         }
 
         // GET: /User/Delete/5
+        [Authorize(Roles = "admin")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -116,6 +123,7 @@ namespace StorageCompany.Controllers
         // POST: /User/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "admin")]
         public ActionResult DeleteConfirmed(int id)
         {
             User user = db.User.Find(id);

@@ -7,6 +7,7 @@ using System.Web.Mvc;
 using System.Web.Security;
 using System.Security.Cryptography;
 using System.Text;
+using System.Data.Entity;
 
 namespace StorageCompany.Controllers
 {
@@ -31,9 +32,10 @@ namespace StorageCompany.Controllers
                 if (isValid(user.username, user.password))
                 {
                     user = db.User.FirstOrDefault(u => u.username == user.username);
-                    Roles.AddUserToRole(user.username, user.Role.name);
                     Session["name"] = user.name;
                     Session["firstname"] = user.firstname;
+                    Session["role"] = user.Role.name;
+                    Session["username"] = user.username;
                     FormsAuthentication.SetAuthCookie(user.username, false);
                     return RedirectToAction("index", "Home");
                 }
@@ -41,13 +43,43 @@ namespace StorageCompany.Controllers
                 {
                     ModelState.AddModelError("", "Invalid username or password");
                 }
-
             }
             return View();
         }
 
+        [HttpGet]
+        public ActionResult ResetPassword()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult ResetPassword(ManageUserViewModel model)
+        {  
+            if (ModelState.IsValid)
+            {
+                String username = (String) Session["username"];
+                User user =  db.User.FirstOrDefault(u => u.username == username);
+                if(user != null && user.password == GetMD5HashData(model.OldPassword))
+                {
+                    user.password = GetMD5HashData(model.NewPassword);
+                    db.Entry(user).State = EntityState.Modified;
+                    db.SaveChanges();
+                    return RedirectToAction("index", "Home");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "The old username is incorect");
+                }
+            }
+
+            return View(model);
+        }
+
         public ActionResult Logout()
         {
+            Session.RemoveAll();
+            Session.Abandon();
             FormsAuthentication.SignOut();
             return RedirectToAction("index", "Home");
         }
