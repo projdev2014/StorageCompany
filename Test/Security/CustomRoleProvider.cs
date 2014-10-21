@@ -5,7 +5,7 @@ using System.Text;
 using System.Web.Security;
 using StorageCompany.Models;
 
-namespace StorageCompany.Models
+namespace StorageCompany.Security
 {
     public class CustomRoleProvider : RoleProvider
     {
