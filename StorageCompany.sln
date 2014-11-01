@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StorageCompany", "Test\StorageCompany.csproj", "{1E8BD8B2-A2A1-4866-BF8D-115D2719B66A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StorageCompany", "StorageCompany\StorageCompany.csproj", "{1E8BD8B2-A2A1-4866-BF8D-115D2719B66A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StorageCompany.Tests", "Test.Tests\StorageCompany.Tests.csproj", "{C1EF4184-112D-4A31-A4C4-71315355FD79}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StorageCompany.Tests", "StorageCompany.Tests\StorageCompany.Tests.csproj", "{C1EF4184-112D-4A31-A4C4-71315355FD79}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
