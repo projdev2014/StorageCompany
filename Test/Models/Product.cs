@@ -20,12 +20,16 @@ namespace StorageCompany.Models
 
         [Required]
         [StringLength(50)]
+        [Display(Name = "table_product_name", ResourceType = typeof(Ressources.StringsDispalyed))]
         public string name { get; set; }
 
+        [Display(Name = "table_product_description", ResourceType = typeof(Ressources.StringsDispalyed))]
         public string description { get; set; }
 
+        [Display(Name = "table_product_stockMin", ResourceType = typeof(Ressources.StringsDispalyed))]
         public int? stockMin { get; set; }
 
+        [Display(Name = "table_product_stockMax", ResourceType = typeof(Ressources.StringsDispalyed))]
         public int? stockMax { get; set; }
 
         public virtual ICollection<Item> Item { get; set; }

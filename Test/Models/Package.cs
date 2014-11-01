@@ -18,14 +18,19 @@ namespace StorageCompany.Models
 
         [Required]
         [StringLength(25)]
+        [Display(Name = "table_package_name", ResourceType = typeof(Ressources.StringsDispalyed))]
         public string name { get; set; }
 
+        [Display(Name = "table_package_width", ResourceType = typeof(Ressources.StringsDispalyed))]
         public int width { get; set; }
 
+        [Display(Name = "table_package_length", ResourceType = typeof(Ressources.StringsDispalyed))]
         public int length { get; set; }
 
+        [Display(Name = "table_package_height", ResourceType = typeof(Ressources.StringsDispalyed))]
         public int height { get; set; }
 
+        [Display(Name = "table_package_weight", ResourceType = typeof(Ressources.StringsDispalyed))]
         public int weight { get; set; }
 
         public virtual ICollection<Product> Product { get; set; }

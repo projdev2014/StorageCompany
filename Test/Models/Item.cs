@@ -18,6 +18,7 @@ namespace StorageCompany.Models
 
         public int productId { get; set; }
 
+        [Display(Name = "table_item_timeExpire", ResourceType = typeof(Ressources.StringsDispalyed))]
         public DateTime? timeExpire { get; set; }
 
         public virtual Product Product { get; set; }

@@ -140,7 +140,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Account.cs" />
-    <Compile Include="Models\CustomRoleProvider.cs" />
+    <Compile Include="Security\CustomRoleProvider.cs" />
     <Compile Include="Models\Item.cs" />
     <Compile Include="Models\Movement.cs" />
     <Compile Include="Models\Order.cs" />
@@ -149,7 +149,7 @@
     <Compile Include="Models\Role.cs" />
     <Compile Include="Models\Status.cs" />
     <Compile Include="Models\Storage.cs" />
-    <Compile Include="Models\StorageEntityDataModel.cs" />
+    <Compile Include="Data Access Layout\StorageEntityDataModel.cs" />
     <Compile Include="Models\StorageType.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

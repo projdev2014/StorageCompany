@@ -19,6 +19,7 @@ namespace StorageCompany.Models
 
         public int storageId { get; set; }
 
+        [Display(Name = "table_movement_dateDone", ResourceType = typeof(Ressources.StringsDispalyed))]
         public DateTime dateDone { get; set; }
 
         public virtual Item Item { get; set; }

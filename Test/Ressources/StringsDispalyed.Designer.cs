@@ -340,6 +340,15 @@ namespace StorageCompany.Ressources {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Role.
+        /// </summary>
+        public static string table_role_name {
+            get {
+                return ResourceManager.GetString("table_role_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Description du status.
         /// </summary>
         public static string table_status_description {
@@ -453,6 +462,42 @@ namespace StorageCompany.Ressources {
         public static string table_storageType_name {
             get {
                 return ResourceManager.GetString("table_storageType_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Prénom.
+        /// </summary>
+        public static string table_user_firstname {
+            get {
+                return ResourceManager.GetString("table_user_firstname", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Nom.
+        /// </summary>
+        public static string table_user_name {
+            get {
+                return ResourceManager.GetString("table_user_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Mot de passe.
+        /// </summary>
+        public static string table_user_password {
+            get {
+                return ResourceManager.GetString("table_user_password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Nom d&apos;utilisateur.
+        /// </summary>
+        public static string table_user_username {
+            get {
+                return ResourceManager.GetString("table_user_username", resourceCulture);
             }
         }
         

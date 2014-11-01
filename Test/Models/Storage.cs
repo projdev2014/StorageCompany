@@ -23,9 +23,11 @@ namespace StorageCompany.Models
 
         [Required]
         [StringLength(25)]
+        [Display(Name = "table_storage_name", ResourceType = typeof(Ressources.StringsDispalyed))]
         public string name { get; set; }
 
         [ScaffoldColumn(false)]
+        [Display(Name = "table_storage_usable", ResourceType = typeof(Ressources.StringsDispalyed))]
         public bool usable { get; set; }
 
         public virtual ICollection<Movement> Movement { get; set; }

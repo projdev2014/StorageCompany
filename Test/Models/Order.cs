@@ -20,12 +20,16 @@ namespace StorageCompany.Models
 
         public int accountRecipientId { get; set; }
 
+        [Display(Name = "table_order_dateAsked", ResourceType = typeof(Ressources.StringsDispalyed))]
         public DateTime dateAsked { get; set; }
 
+        [Display(Name = "table_order_dateEstimated", ResourceType = typeof(Ressources.StringsDispalyed))]
         public DateTime? dateEstimated { get; set; }
 
+        [Display(Name = "table_order_dateDone", ResourceType = typeof(Ressources.StringsDispalyed))]
         public DateTime? dateDone { get; set; }
 
+        [Display(Name = "table_order_intern", ResourceType = typeof(Ressources.StringsDispalyed))]
         public bool intern { get; set; }
 
         public virtual Account Account { get; set; }

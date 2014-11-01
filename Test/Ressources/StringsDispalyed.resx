@@ -210,6 +210,9 @@
   <data name="table_product_stockMin" xml:space="preserve">
     <value>Stock maximum</value>
   </data>
+  <data name="table_role_name" xml:space="preserve">
+    <value>Role</value>
+  </data>
   <data name="table_status_description" xml:space="preserve">
     <value>Description du status</value>
   </data>
@@ -248,6 +251,18 @@
   </data>
   <data name="table_storage_usable" xml:space="preserve">
     <value>Emplacement utilisable</value>
+  </data>
+  <data name="table_user_firstname" xml:space="preserve">
+    <value>Prénom</value>
+  </data>
+  <data name="table_user_name" xml:space="preserve">
+    <value>Nom</value>
+  </data>
+  <data name="table_user_password" xml:space="preserve">
+    <value>Mot de passe</value>
+  </data>
+  <data name="table_user_username" xml:space="preserve">
+    <value>Nom d'utilisateur</value>
   </data>
   <data name="title" xml:space="preserve">
     <value>Gestion de stock</value>

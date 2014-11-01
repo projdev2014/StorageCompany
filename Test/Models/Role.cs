@@ -18,6 +18,7 @@ namespace StorageCompany.Models
 
         [Required]
         [StringLength(25)]
+        [Display(Name = "table_role_name", ResourceType = typeof(Ressources.StringsDispalyed))]
         public string name { get; set; }
 
         public virtual ICollection<User> Users { get; set; }

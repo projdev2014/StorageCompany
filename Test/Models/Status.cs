@@ -17,10 +17,13 @@ namespace StorageCompany.Models
 
         [Required]
         [StringLength(25)]
+        [Display(Name = "table_status_name", ResourceType = typeof(Ressources.StringsDispalyed))]
         public string name { get; set; }
 
+        [Display(Name = "table_status_description", ResourceType = typeof(Ressources.StringsDispalyed))]
         public string description { get; set; }
 
+        [Display(Name = "table_status_endingStatus", ResourceType = typeof(Ressources.StringsDispalyed))]
         public bool endingStatus { get; set; }
 
         public virtual ICollection<Movement> Movement { get; set; }
