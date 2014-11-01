@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="~/Content/Images/warehouse.png" type="image/x-icon">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/bundles/css")
+</head>
+<body>
+    <div class="container">
+            <!-- Barre de navigation -->
+            <div class="navbar navbar-default" role="navigation">
+                <div class="container-fluid">
+
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            @if (User.IsInRole("admin")) { <span> class="icon-bar"></span>} 
+                        </button>
+                        @Html.ActionLink(@StorageCompany.Ressources.StringsDispalyed.title, "Index", "Home", null, new { @class = "navbar-brand" })
+                    </div>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                            <li>@Html.ActionLink(@StorageCompany.Ressources.StringsDispalyed.title_inventory, "Inventory", "Home")</li>
+                            <li>@Html.ActionLink(@StorageCompany.Ressources.StringsDispalyed.title_order, "Order", "Home")</li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">@StorageCompany.Ressources.StringsDispalyed.title_encoding <span class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li>@Html.ActionLink(@StorageCompany.Ressources.StringsDispalyed.table_account, "Index", "Account")</li>
+                                    <li>@Html.ActionLink(@StorageCompany.Ressources.StringsDispalyed.table_storageType, "Index", "StorageType")</li>
+                                    <li>@Html.ActionLink(@StorageCompany.Ressources.StringsDispalyed.table_storage, "Index", "Storage")</li>
+                                    <li>@Html.ActionLink(@StorageCompany.Ressources.StringsDispalyed.table_package, "Index", "Package")</li>
+                                    <li>@Html.ActionLink(@StorageCompany.Ressources.StringsDispalyed.table_product, "Index", "Product")</li>
+                                </ul>
+                            </li>
+                            @if (User.IsInRole("admin"))
+                            {
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Administration<span class="caret"></span></a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li>@Html.ActionLink(@StorageCompany.Ressources.StringsDispalyed.table_account, "Index", "User")</li>
+                                    </ul>
+                                </li>
+                           }
+                    </ul>
+                    <div class="nav navbar-nav navbar-right">
+                        <div class="navbar-login">
+                            @if (Request.IsAuthenticated)
+                            {
+                                @Session["firstname"] <span> </span> @Session["name"]
+                                <span> | </span>
+                                @Html.ActionLink("Change password", "ResetPassword", "Login")
+                                <span> | </span>
+                                @Html.ActionLink("Logout", "Logout", "Login")
+                                
+                                
+                            }
+                            else
+                            {
+                                @Html.ActionLink("Log In", "Index", "Login")
+                            }
+                        </div>
+                    </div><!-- navbar-right-->
+                </div><!-- navbar-collapse -->
+            </div><!-- container-fluid -->
+        </div><!-- navigation -->
+
+        <!-- Contenu de la page -->
+        <div class="container body-content">
+                
+            @RenderBody() <!-- Appel le contenu de la page -->
+        </div><!-- body-content -->
+    </div><!-- container -->
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

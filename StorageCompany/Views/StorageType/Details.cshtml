@@ -1,0 +1,66 @@
+﻿@model StorageCompany.Models.StorageType
+
+@{
+    ViewBag.Title = @StorageCompany.Ressources.StringsDispalyed.title_product_details;
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div>
+    <h4>StorageType</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.maxWidth)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.maxWidth)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.maxLength)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.maxLength)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.maxHeight)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.maxHeight)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.maxWeight)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.maxWeight)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

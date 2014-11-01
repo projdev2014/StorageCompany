@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" enableLocalization="true">
+    <siteMapNode title="Home" controller="Home"  action="Index" roles="*">
+        <siteMapNode title="Inventory" controller="Home"  action="Inventory" roles="admin,user"/>
+        <siteMapNode title="Order" controller="Home" action="Order" roles ="admin,user" />
+        <siteMapNode title="Encoding" clickable="false">
+            <siteMapNode title="Account" controller="Account" action="Index" roles ="admin,user" />
+            <siteMapNode title="Item" controller="Item" action="Index" roles ="admin,user" />
+            <siteMapNode title="Package" controller="Package" action="Index" roles ="admin,user" />
+            <siteMapNode title="Product" controller="Product" action="Index" roles ="admin,user" />
+            <siteMapNode title="Storage" controller="Storage" action="Index" roles ="admin,user" />
+            <siteMapNode title="Storage Type" controller="StorageType" action="Index" roles ="admin,user" />
+            <siteMapNode title="User" controller="User" action="Index" roles="admin" />
+        </siteMapNode>
+     </siteMapNode>
+</siteMap>

@@ -1,0 +1,90 @@
+﻿@model StorageCompany.Models.Account
+
+@{
+    ViewBag.Title = @StorageCompany.Ressources.StringsDispalyed.title_account_details;
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div>
+    <h4>Account</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.entrepriseNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.entrepriseNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.city)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.city)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.postalCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.postalCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.streetNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.streetNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.streetName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.streetName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.country)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.country)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.intern)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.intern)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
