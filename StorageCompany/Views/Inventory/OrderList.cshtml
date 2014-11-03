@@ -1,0 +1,55 @@
+﻿@model IEnumerable<StorageCompany.Models.StoredProcedure.StorageCompany.DataAccessLayer.ListOrder>
+
+@{
+    ViewBag.Title = @StorageCompany.Ressources.StringsDispalyed.title_inventory;
+}
+
+<h2>@ViewBag.Title</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.senderName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.recipientName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dateAsked)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dateEstimated)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dateDone)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.senderName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.recipientName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dateAsked)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dateEstimated)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dateDone)
+        </td>
+    </tr>
+}
+
+</table>

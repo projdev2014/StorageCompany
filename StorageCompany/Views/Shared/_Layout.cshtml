@@ -67,9 +67,7 @@
                                 <span> | </span>
                                 @Html.ActionLink("Change password", "ResetPassword", "Login")
                                 <span> | </span>
-                                @Html.ActionLink("Logout", "Logout", "Login")
-                                
-                                
+                                @Html.ActionLink("Logout", "Logout", "Login")                               
                             }
                             else
                             {
@@ -83,7 +81,6 @@
 
         <!-- Contenu de la page -->
         <div class="container body-content">
-                
             @RenderBody() <!-- Appel le contenu de la page -->
         </div><!-- body-content -->
     </div><!-- container -->
