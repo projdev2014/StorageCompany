@@ -126,20 +126,21 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ItemController.cs" />
+    <Compile Include="Controllers\InventoryController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
-    <Compile Include="Controllers\MovementController.cs" />
     <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Controllers\PackageController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
-    <Compile Include="Controllers\StatusController.cs" />
     <Compile Include="Controllers\StorageController.cs" />
     <Compile Include="Controllers\StorageTypeController.cs" />
     <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="DataAccessLayer\ConnectionSql.cs" />
+    <Compile Include="DataAccessLayer\DataAccessObject.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Account.cs" />
+    <Compile Include="Models\StoredProcedure\ListOrder.cs" />
     <Compile Include="Security\CustomRoleProvider.cs" />
     <Compile Include="Models\Item.cs" />
     <Compile Include="Models\Movement.cs" />
@@ -204,11 +205,6 @@
     <Content Include="Views\Account\Details.cshtml" />
     <Content Include="Views\Account\Edit.cshtml" />
     <Content Include="Views\Account\Index.cshtml" />
-    <Content Include="Views\Order\Create.cshtml" />
-    <Content Include="Views\Order\Delete.cshtml" />
-    <Content Include="Views\Order\Details.cshtml" />
-    <Content Include="Views\Order\Edit.cshtml" />
-    <Content Include="Views\Order\Index.cshtml" />
     <Content Include="Views\StorageType\Create.cshtml" />
     <Content Include="Views\StorageType\Delete.cshtml" />
     <Content Include="Views\StorageType\Details.cshtml" />
@@ -224,27 +220,11 @@
     <Content Include="Views\Package\Details.cshtml" />
     <Content Include="Views\Package\Edit.cshtml" />
     <Content Include="Views\Package\Index.cshtml" />
-    <Content Include="Views\Item\Create.cshtml" />
-    <Content Include="Views\Item\Delete.cshtml" />
-    <Content Include="Views\Item\Details.cshtml" />
-    <Content Include="Views\Item\Edit.cshtml" />
-    <Content Include="Views\Item\Index.cshtml" />
-    <Content Include="Views\Status\Create.cshtml" />
-    <Content Include="Views\Status\Delete.cshtml" />
-    <Content Include="Views\Status\Details.cshtml" />
-    <Content Include="Views\Status\Edit.cshtml" />
-    <Content Include="Views\Status\Index.cshtml" />
-    <Content Include="Views\Movement\Create.cshtml" />
-    <Content Include="Views\Movement\Delete.cshtml" />
-    <Content Include="Views\Movement\Details.cshtml" />
-    <Content Include="Views\Movement\Edit.cshtml" />
-    <Content Include="Views\Movement\Index.cshtml" />
     <Content Include="Views\Product\Create.cshtml" />
     <Content Include="Views\Product\Delete.cshtml" />
     <Content Include="Views\Product\Details.cshtml" />
     <Content Include="Views\Product\Edit.cshtml" />
     <Content Include="Views\Product\Index.cshtml" />
-    <Content Include="Views\Home\Inventory.cshtml" />
     <Content Include="Views\Home\Order.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
@@ -255,6 +235,10 @@
     <Content Include="Views\User\Index.cshtml" />
     <Content Include="Web.sitemap" />
     <Content Include="Views\Login\ResetPassword.cshtml" />
+    <Content Include="Views\Inventory\OrderList.cshtml" />
+    <Content Include="Views\Inventory\ItemList.cshtml" />
+    <Content Include="Views\Inventory\MovementList.cshtml" />
+    <Content Include="Views\Order\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Ressources\StringsDispalyed.resx">
@@ -267,6 +251,9 @@
     <Content Include="Content\Fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\Fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

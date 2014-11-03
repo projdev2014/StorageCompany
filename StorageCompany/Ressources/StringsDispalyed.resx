@@ -180,8 +180,14 @@
   <data name="table_order_dateDone" xml:space="preserve">
     <value>Date effective de livraison</value>
   </data>
-  <data name="table_order_dateEstmated" xml:space="preserve">
+  <data name="table_order_dateEstimated" xml:space="preserve">
     <value>Date de la demande de livraison</value>
+  </data>
+  <data name="table_order_intern" xml:space="preserve">
+    <value>Interne</value>
+  </data>
+  <data name="table_order_type" xml:space="preserve">
+    <value>Type</value>
   </data>
   <data name="table_package" xml:space="preserve">
     <value>Paquet</value>

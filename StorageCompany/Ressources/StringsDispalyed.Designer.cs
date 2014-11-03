@@ -252,9 +252,27 @@ namespace StorageCompany.Ressources {
         /// <summary>
         ///   Recherche une chaîne localisée semblable à Date de la demande de livraison.
         /// </summary>
-        public static string table_order_dateEstmated {
+        public static string table_order_dateEstimated {
             get {
-                return ResourceManager.GetString("table_order_dateEstmated", resourceCulture);
+                return ResourceManager.GetString("table_order_dateEstimated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Interne.
+        /// </summary>
+        public static string table_order_intern {
+            get {
+                return ResourceManager.GetString("table_order_intern", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Type.
+        /// </summary>
+        public static string table_order_type {
+            get {
+                return ResourceManager.GetString("table_order_type", resourceCulture);
             }
         }
         

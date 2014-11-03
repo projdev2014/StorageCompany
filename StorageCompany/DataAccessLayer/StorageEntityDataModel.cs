@@ -157,6 +157,8 @@ namespace StorageCompany.Models
             modelBuilder.Entity<User>()
                 .Property(e => e.password)
                 .IsUnicode(false);
+
         }
+
     }
 }
