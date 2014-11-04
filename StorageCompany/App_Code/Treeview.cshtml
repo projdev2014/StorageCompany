@@ -1,0 +1,36 @@
+﻿@helper GetTreeView(List<StorageCompany.Models.Storage> storages, int? parentId)
+{
+    foreach (var i in storages.Where(a => a.storageParentId.Equals(parentId)))
+    {       
+            <li>
+            @{var submenu = storages.Where(a => a.storageParentId.Equals(i.id)).Count();}
+            @if (i.storageParentId == null)
+            {
+                
+                    <span><i class="glyphicon glyphicon-home"></i>&nbsp;</span>
+                
+            }
+            else if (submenu > 0)
+            {
+                
+                    <span><i class="glyphicon glyphicon glyphicon-minus-sign"></i>&nbsp;</span>
+           
+            }
+            else
+            {
+         
+                    <span><i class="glyphicon glyphicon-stats"></i>&nbsp;</span>
+
+            }
+            <span>
+                @i.name
+            </span>
+            @if(submenu > 0)
+            {
+                <ul>
+                    @Treeview.GetTreeView(storages, i.id)
+                </ul>
+            }
+            </li>
+    }
+}

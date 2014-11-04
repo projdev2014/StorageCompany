@@ -333,8 +333,14 @@
   <data name="title_item_index" xml:space="preserve">
     <value>Liste des articles</value>
   </data>
+  <data name="title_MovementList" xml:space="preserve">
+    <value>Liste des mouvements</value>
+  </data>
   <data name="title_order" xml:space="preserve">
     <value>Commande</value>
+  </data>
+  <data name="title_OrderList" xml:space="preserve">
+    <value>Liste des commandes</value>
   </data>
   <data name="title_package_create" xml:space="preserve">
     <value>Création de paquet</value>
@@ -365,6 +371,9 @@
   </data>
   <data name="title_product_index" xml:space="preserve">
     <value>Liste des produits</value>
+  </data>
+  <data name="title_StorageList" xml:space="preserve">
+    <value>Contenu des emplacements</value>
   </data>
   <data name="title_storageType_create" xml:space="preserve">
     <value>Création de type d'emplacement</value>

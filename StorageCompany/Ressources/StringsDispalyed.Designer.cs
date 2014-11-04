@@ -709,11 +709,29 @@ namespace StorageCompany.Ressources {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Liste des mouvements.
+        /// </summary>
+        public static string title_MovementList {
+            get {
+                return ResourceManager.GetString("title_MovementList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Commande.
         /// </summary>
         public static string title_order {
             get {
                 return ResourceManager.GetString("title_order", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Liste des commandes.
+        /// </summary>
+        public static string title_OrderList {
+            get {
+                return ResourceManager.GetString("title_OrderList", resourceCulture);
             }
         }
         
@@ -849,6 +867,15 @@ namespace StorageCompany.Ressources {
         public static string title_storage_index {
             get {
                 return ResourceManager.GetString("title_storage_index", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Contenu des emplacements.
+        /// </summary>
+        public static string title_StorageList {
+            get {
+                return ResourceManager.GetString("title_StorageList", resourceCulture);
             }
         }
         
