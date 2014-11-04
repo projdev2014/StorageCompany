@@ -140,6 +140,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Account.cs" />
+    <Compile Include="Models\StoredProcedure\ListMovement.cs" />
     <Compile Include="Models\StoredProcedure\ListOrder.cs" />
     <Compile Include="Security\CustomRoleProvider.cs" />
     <Compile Include="Models\Item.cs" />
@@ -237,8 +238,8 @@
     <Content Include="Views\Login\ResetPassword.cshtml" />
     <Content Include="Views\Inventory\OrderList.cshtml" />
     <Content Include="Views\Inventory\ItemList.cshtml" />
-    <Content Include="Views\Inventory\MovementList.cshtml" />
     <Content Include="Views\Order\Index.cshtml" />
+    <Content Include="Views\Inventory\MovementList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Ressources\StringsDispalyed.resx">

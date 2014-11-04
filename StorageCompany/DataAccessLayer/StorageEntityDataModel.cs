@@ -160,5 +160,7 @@ namespace StorageCompany.Models
 
         }
 
+        public System.Data.Entity.DbSet<StorageCompany.Models.StoredProcedure.ListMovement> ListMovements { get; set; }
+
     }
 }

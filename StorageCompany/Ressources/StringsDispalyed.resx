@@ -163,7 +163,22 @@
     <value>Mouvement</value>
   </data>
   <data name="table_movement_dateDone" xml:space="preserve">
-    <value>Date de fin</value>
+    <value>Date de stockage</value>
+  </data>
+  <data name="table_movement_newStorage" xml:space="preserve">
+    <value>Nouvel emplacement</value>
+  </data>
+  <data name="table_movement_oldStorage" xml:space="preserve">
+    <value>Ancien emplacement</value>
+  </data>
+  <data name="table_movement_product" xml:space="preserve">
+    <value>Produit</value>
+  </data>
+  <data name="table_movement_status" xml:space="preserve">
+    <value>Statut</value>
+  </data>
+  <data name="table_movement_timeExpire" xml:space="preserve">
+    <value>Date d'expiration</value>
   </data>
   <data name="table_order" xml:space="preserve">
     <value>Commande</value>

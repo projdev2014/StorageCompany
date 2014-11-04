@@ -1,4 +1,4 @@
-﻿@model IEnumerable<StorageCompany.Models.StoredProcedure.StorageCompany.DataAccessLayer.ListOrder>
+﻿@model IEnumerable<StorageCompany.Models.StoredProcedure.ListOrder>
 
 @{
     ViewBag.Title = @StorageCompany.Ressources.StringsDispalyed.title_inventory;
@@ -26,7 +26,6 @@
         <th>
             @Html.DisplayNameFor(model => model.dateDone)
         </th>
-        <th></th>
     </tr>
 
 @foreach (var item in Model) {

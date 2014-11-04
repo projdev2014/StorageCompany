@@ -1,7 +1,60 @@
-﻿
+﻿@model IEnumerable<StorageCompany.Models.StoredProcedure.ListMovement>
+
 @{
     ViewBag.Title = "MovementList";
 }
 
 <h2>MovementList</h2>
 
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.product)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.newStorage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.oldStorage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dateDone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.timeExpire)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.product)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.newStorage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.oldStorage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dateDone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.timeExpire)
+        </td>
+    </tr>
+}
+
+</table>

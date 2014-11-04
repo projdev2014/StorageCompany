@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Data.SqlClient;
 using System.Data;
-using StorageCompany.Models.StoredProcedure.StorageCompany.DataAccessLayer;
+using StorageCompany.Models.StoredProcedure;
 
 namespace StorageCompany.DataAccessLayer
 {
@@ -70,6 +70,36 @@ namespace StorageCompany.DataAccessLayer
                     dateAsked = DateTime.Parse(dr[4].ToString()),
                     dateEstimated = DateTime.Parse(dr[5].ToString()),
                     dateDone = DateTime.Parse(dr[6].ToString())
+                });
+            }
+            return list;
+        }
+
+        // getListMovement
+        public DataSet fillListMovement(String table = "Table")
+        {
+            String query = "getListMovement";
+            DataSet dataSet = fill(query, table);
+            return dataSet;
+        }
+
+        public List<ListMovement> getListMovement()
+        {
+            DataSet ds = fillListMovement();
+            List<ListMovement> list = new List<ListMovement>();
+            foreach (DataRow dr in ds.Tables[0].Rows)
+            {
+                list.Add(new ListMovement
+                {
+                    id = int.Parse(dr[0].ToString()),
+                    type = dr[1].ToString(),
+                    status = dr[2].ToString(),
+                    product = dr[3].ToString(),
+                    newStorage = dr[4].ToString(),
+                    oldStorage = dr[5].ToString(),
+                    dateDone = DateTime.Parse(dr[6].ToString()),
+                    timeExpire = DateTime.Parse(dr[7].ToString())
+                    
                 });
             }
             return list;

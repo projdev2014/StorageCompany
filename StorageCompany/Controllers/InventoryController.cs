@@ -8,7 +8,6 @@ using System.Web;
 using System.Web.Mvc;
 using StorageCompany.Models.StoredProcedure;
 using StorageCompany.DataAccessLayer;
-using StorageCompany.Models.StoredProcedure.StorageCompany.DataAccessLayer;
 
 namespace StorageCompany.Controllers
 {
@@ -28,7 +27,8 @@ namespace StorageCompany.Controllers
         // GET: /Inventory/MovementList
         public ActionResult MovementList()
         {
-            return View();
+            var sp_movement = db.getListMovement();
+            return View(sp_movement);
         }
 
         

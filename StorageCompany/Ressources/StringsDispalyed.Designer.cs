@@ -196,11 +196,56 @@ namespace StorageCompany.Ressources {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Date de fin.
+        ///   Recherche une chaîne localisée semblable à Date de stockage.
         /// </summary>
         public static string table_movement_dateDone {
             get {
                 return ResourceManager.GetString("table_movement_dateDone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Nouvel emplacement.
+        /// </summary>
+        public static string table_movement_newStorage {
+            get {
+                return ResourceManager.GetString("table_movement_newStorage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Ancien emplacement.
+        /// </summary>
+        public static string table_movement_oldStorage {
+            get {
+                return ResourceManager.GetString("table_movement_oldStorage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Produit.
+        /// </summary>
+        public static string table_movement_product {
+            get {
+                return ResourceManager.GetString("table_movement_product", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Statut.
+        /// </summary>
+        public static string table_movement_status {
+            get {
+                return ResourceManager.GetString("table_movement_status", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Date d&apos;expiration.
+        /// </summary>
+        public static string table_movement_timeExpire {
+            get {
+                return ResourceManager.GetString("table_movement_timeExpire", resourceCulture);
             }
         }
         
