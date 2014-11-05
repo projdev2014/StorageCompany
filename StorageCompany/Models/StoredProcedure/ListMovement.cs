@@ -27,11 +27,11 @@ namespace StorageCompany.Models.StoredProcedure
         public string oldStorage { get; set; }
 
         [Display(Name = "table_movement_dateDone", ResourceType = typeof(Ressources.StringsDispalyed))]
-        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:MM/dd/yy HH:mm}")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yy HH:mm}")]
         public System.DateTime dateDone { get; set; }
 
         [Display(Name = "table_movement_timeExpire", ResourceType = typeof(Ressources.StringsDispalyed))]
-        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:MM/dd/yy}")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yy}")]
         public Nullable<System.DateTime> timeExpire { get; set; }
 
     }
