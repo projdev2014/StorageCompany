@@ -1,0 +1,60 @@
+﻿@model StorageCompany.Models.Order
+
+@{
+    ViewBag.Title = "Step1_Order";
+    
+}
+
+
+<div class=" crumbs">
+    <a href="#" class="active"><i class="glyphicon glyphicon glyphicon-record"></i> Step 1 : Order</a>
+    <a href="#"><i class="glyphicon glyphicon glyphicon-record"></i> Step 2 : Item</a>
+    <a href="#"><i class="glyphicon glyphicon glyphicon-record"></i> Step 3 : Confirm</a>
+</div>
+
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h2>Création de la commande</h2>
+        <hr />
+        @Html.ValidationSummary(true)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.accountSenderId, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("accountSenderId")
+                @Html.ValidationMessageFor(model => model.accountSenderId)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.accountRecipientId, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("accountRecipientId")
+                @Html.ValidationMessageFor(model => model.accountRecipientId)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.dateEstimated, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.dateEstimated)
+                @Html.ValidationMessageFor(model => model.dateEstimated)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Next Step" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

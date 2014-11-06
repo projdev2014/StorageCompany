@@ -1,0 +1,69 @@
+﻿@model StorageCompany.Models.Movement
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Movement</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.id)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.statusId, "statusId", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("statusId", String.Empty)
+                @Html.ValidationMessageFor(model => model.statusId)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.orderId, "orderId", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("orderId", String.Empty)
+                @Html.ValidationMessageFor(model => model.orderId)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.itemId, "itemId", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("itemId", String.Empty)
+                @Html.ValidationMessageFor(model => model.itemId)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.storageId, "storageId", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("storageId", String.Empty)
+                @Html.ValidationMessageFor(model => model.storageId)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.dateDone, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.dateDone)
+                @Html.ValidationMessageFor(model => model.dateDone)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
