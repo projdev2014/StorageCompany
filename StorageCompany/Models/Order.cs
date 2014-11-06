@@ -25,6 +25,7 @@ namespace StorageCompany.Models
         [Display(Name = "table_order_dateAsked", ResourceType = typeof(Ressources.StringsDispalyed))]
         public DateTime dateAsked { get; set; }
 
+        [Required]
         [Display(Name = "table_order_dateEstimated", ResourceType = typeof(Ressources.StringsDispalyed))]
         public DateTime? dateEstimated { get; set; }
 

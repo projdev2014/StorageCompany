@@ -98,11 +98,17 @@ input[type="checkbox"].input-validation-error {
 /* Steps for the formular */
 
 .crumbs {
+    width: 692px;
 	display: inline-block;
 	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.35);
 	overflow: hidden;
 	border-radius: 5px;
-	counter-reset: flag; 
+	counter-reset: flag;
+    display: block; 
+    align-content: center; 
+    margin-left:auto; 
+    margin-right:auto; 
+    
 }
 
 .crumbs a {

@@ -133,6 +133,8 @@
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\StorageController.cs" />
     <Compile Include="Controllers\StorageTypeController.cs" />
+    <Compile Include="Controllers\TestMovementController.cs" />
+    <Compile Include="Controllers\TestOrderController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="DataAccessLayer\ConnectionSql.cs" />
     <Compile Include="DataAccessLayer\DataAccessObject.cs" />
@@ -236,9 +238,23 @@
     <Content Include="Views\Login\ResetPassword.cshtml" />
     <Content Include="Views\Inventory\OrderList.cshtml" />
     <Content Include="Views\Inventory\StorageList.cshtml" />
-    <Content Include="Views\Order\Index.cshtml" />
     <Content Include="Views\Inventory\MovementList.cshtml" />
     <Content Include="App_Code\Treeview.cshtml" />
+    <Content Include="Views\Storage\TestMovement\Create.cshtml" />
+    <Content Include="Views\Storage\TestMovement\Delete.cshtml" />
+    <Content Include="Views\Storage\TestMovement\Details.cshtml" />
+    <Content Include="Views\Storage\TestMovement\Edit.cshtml" />
+    <Content Include="Views\Storage\TestMovement\Index.cshtml" />
+    <Content Include="Views\Order\Step1_Order.cshtml" />
+    <Content Include="Views\Order\Step2_MovementIn.cshtml" />
+    <Content Include="Views\Order\Step2_MovementOut.cshtml" />
+    <Content Include="Views\Order\Step2_MovementInternal.cshtml" />
+    <Content Include="Views\Order\Step3_Confirmation.cshtml" />
+    <Content Include="Views\TestOrder\Create.cshtml" />
+    <Content Include="Views\TestOrder\Delete.cshtml" />
+    <Content Include="Views\TestOrder\Details.cshtml" />
+    <Content Include="Views\TestOrder\Edit.cshtml" />
+    <Content Include="Views\TestOrder\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Ressources\StringsDispalyed.resx">
