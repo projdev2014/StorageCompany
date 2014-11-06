@@ -93,3 +93,84 @@ input[type="checkbox"].input-validation-error {
 .tree li:last-child::before {
     height:30px
 }
+
+
+/* Steps for the formular */
+
+.crumbs {
+	display: inline-block;
+	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.35);
+	overflow: hidden;
+	border-radius: 5px;
+	counter-reset: flag; 
+}
+
+.crumbs a {
+	text-decoration: none;
+	outline: none;
+	display: block;
+	float: left;
+	font-size: 12px;
+	line-height: 36px;
+	padding: 0 70px 0 80px;
+	background: white;
+	color: black;
+	transition: all 0.5s;
+	position: relative;
+}
+
+.crumbs a:first-child {
+	padding-left: 46px;
+	border-radius: 5px 0 0 5px;
+}
+.crumbs a:first-child:before {
+	left: 14px;
+}
+.crumbs a:last-child {
+	border-radius: 0 5px 5px 0;
+	padding-right: 70px;
+}
+
+.crumbs a.active, .crumbs a:hover{
+	background: #9EEB62;
+}
+.crumbs a.active:after, .crumbs a:hover:after {
+	background: #9EEB62;
+}
+
+.crumbs a:after {
+	content: '';
+	position: absolute;
+	top: 0; 
+	right: -18px;
+	width: 36px; 
+	height: 36px;
+	transform: scale(0.707) rotate(45deg);
+	z-index: 1;
+	background: white;
+	color: black;
+	transition: all 0.5s;
+	box-shadow: 
+		2px -2px 0 2px rgba(0, 0, 0, 0.4), 
+		3px -3px 0 2px rgba(255, 255, 255, 0.1);
+	border-radius: 0 5px 0 50px;
+}
+
+.crumbs a:last-child:after {
+	content: none;
+}
+
+.crumbs a:before {
+	counter-increment: flag;
+	border-radius: 100%;
+	width: 20px;
+	height: 20px;
+	line-height: 20px;
+	margin: 8px 0;
+	position: absolute;
+	top: 0;
+	left: 20px;
+	background: white;
+	box-shadow: 0 0 0 1px #ccc;
+	font-weight: bold;
+}

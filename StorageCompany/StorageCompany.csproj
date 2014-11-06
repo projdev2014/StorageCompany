@@ -226,7 +226,6 @@
     <Content Include="Views\Product\Details.cshtml" />
     <Content Include="Views\Product\Edit.cshtml" />
     <Content Include="Views\Product\Index.cshtml" />
-    <Content Include="Views\Home\Order.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\User\Create.cshtml" />
@@ -240,7 +239,6 @@
     <Content Include="Views\Order\Index.cshtml" />
     <Content Include="Views\Inventory\MovementList.cshtml" />
     <Content Include="App_Code\Treeview.cshtml" />
-    <Content Include="Views\Inventory\Test.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Ressources\StringsDispalyed.resx">
