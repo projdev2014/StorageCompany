@@ -1,7 +1,12 @@
-﻿@model StorageCompany.Models.Movement
+﻿@model StorageCompany.Models.StoredProcedure.ListItemIn
 
 @{
     ViewBag.Title = "Step2_Movement";
+    var dbo = new StorageCompany.DataAccessLayer.DataAccessObject();
+    Order order = (Order)Session["order"];
+    List<Storage> freeStorage = dbo.getListEmptyStorage(order.dateEstimated);
+    StorageCompany.Models.StoredProcedure.ListItemIn test = new StorageCompany.Models.StoredProcedure.ListItemIn();
+
 }
 
 
@@ -14,12 +19,46 @@
 <h2>Encodage des Articles</h2>
 <h3>Mouvement Entrant</h3>
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
     
-    <div class="form-horizontal">
-        <hr />
+    <fieldset>
+        <div class="form-horizontal">
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.storageId, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownList("storageId")
+                    @Html.ValidationMessageFor(model => model.storageId)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.productId, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownList("productId")
+                    @Html.ValidationMessageFor(model => model.productId)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.timeExpire, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.timeExpire)
+                    @Html.ValidationMessageFor(model => model.timeExpire)
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create" class="btn btn-default" />
+                </div>
+            </div>
+
+        </div>
+    </fieldset>
+    @*<hr />
         @Html.ValidationSummary(true)
 
         <div class="form-group">
@@ -66,8 +105,8 @@
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Next Step" class="btn btn-default" />
             </div>
-        </div>
-    </div>
+        </div>*@
+
 }
 
 @section Scripts {

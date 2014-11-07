@@ -5,6 +5,7 @@ using System.Web;
 using System.Data.SqlClient;
 using System.Data;
 using StorageCompany.Models.StoredProcedure;
+using StorageCompany.Models;
 
 namespace StorageCompany.DataAccessLayer
 {
@@ -105,6 +106,57 @@ namespace StorageCompany.DataAccessLayer
             return list;
         }
 
+        // getListStorageFree
+        public DataSet fillListStorageFree(DateTime date, string table = "Table")
+        {
+            DataSet myDataSet = new DataSet();
+            SqlDataAdapter myDataAdapter;
+            String query = "getListStorageFree";
+            myDataSet.Tables.Add(table);
+            try
+            {
+                if (myConnection.State.ToString() == "Closed")
+                {
+                    myConnection.Open();
+                }
+            }
+            catch (SqlException exp)
+            {
+                throw new Exception(" Erreur lors de la connexion à la base de donnée !", exp);
+            }
+            SqlCommand myCommand = new SqlCommand(query, myConnection);
+            myCommand.CommandType = CommandType.StoredProcedure;
+            myCommand.Parameters.Add("@date", SqlDbType.DateTime, 20).Value = date;
+            myDataAdapter = new SqlDataAdapter(myCommand);
+            myDataAdapter.Fill(myDataSet, table);
+            myConnection.Close();
+            return myDataSet;
+        }
+
+        public List<Storage> getListEmptyStorage(DateTime date)
+        {
+            int? a;
+            DataSet ds = fillListStorageFree(date);
+            List<Storage> list = new List<Storage>();
+            foreach (DataRow dr in ds.Tables[0].Rows)
+            {
+                if(dr[2].ToString() == null)
+                {
+                    a = null;
+                } else {
+                    a = int.Parse(dr[2].ToString());
+                }
+                list.Add(new Storage
+                {
+                    id = int.Parse(dr[0].ToString()),
+                    storageTypeId = int.Parse(dr[1].ToString()),
+                    storageParentId = a,
+                    name = dr[3].ToString(),
+                    usable = bool.Parse(dr[4].ToString())
+                });
+            }
+            return list;
+        } 
     }
     
 }

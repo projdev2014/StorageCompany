@@ -1,4 +1,5 @@
-﻿using StorageCompany.Models;
+﻿using StorageCompany.DataAccessLayer;
+using StorageCompany.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,7 @@ namespace StorageCompany.Controllers
     public class OrderController : Controller
     {
         private StorageEntityDataModel db = new StorageEntityDataModel();
-        
+        private DataAccessObject dbo = new DataAccessObject();
         //
         // GET: /Order/
         public ActionResult Index()
@@ -37,16 +38,19 @@ namespace StorageCompany.Controllers
                 if (sender.intern == true && recipient.intern == true) // if sender and recipient are intern
                 {
                     order.intern = true;
+                    Session["order"] = order;
                     return RedirectToAction("Step2_MovementInternal"); 
                 }
                 else if (sender.intern == true) // if sender is intern
                 {
                     order.intern = false;
+                    Session["order"] = order;
                     return RedirectToAction("Step2_MovementOut");
                 }
                 else if (recipient.intern == true) // if recipient is intern
                 {
                     order.intern = false;
+                    Session["order"] = order;
                     return RedirectToAction("Step2_MovementIn");
                 }
                 else // if sender and recipient are extern
@@ -54,7 +58,6 @@ namespace StorageCompany.Controllers
                     ModelState.AddModelError("accountSenderId", "L'expéditeur et le destintaire ne peuvent être externes tous les deux");
                     ModelState.AddModelError("accountRecipientId", "L'expéditeur et le destintaire ne peuvent être externes tous les deux");   
                 }
-                Session["order"] = order;
             }
             ViewBag.accountRecipientId = new SelectList(db.Account, "id", "name");
             ViewBag.accountSenderId = new SelectList(db.Account, "id", "name");
@@ -63,10 +66,9 @@ namespace StorageCompany.Controllers
 
         public ActionResult Step2_MovementIn()
         {
-            ViewBag.itemId = new SelectList(db.Item, "id", "id");
-            ViewBag.orderId = new SelectList(db.Order, "id", "id");
-            ViewBag.statusId = new SelectList(db.Status, "id", "name");
-            ViewBag.storageId = new SelectList(db.Storage, "id", "name");
+            Order order = (Order) Session["order"];
+            ViewBag.storageId = new SelectList(dbo.getListEmptyStorage(order.dateEstimated), "id", "name");
+            ViewBag.productId = new SelectList(db.Product, "id", "name");
             return View("Step2_MovementIn");
         }
 

@@ -27,7 +27,7 @@ namespace StorageCompany.Models
 
         [Required]
         [Display(Name = "table_order_dateEstimated", ResourceType = typeof(Ressources.StringsDispalyed))]
-        public DateTime? dateEstimated { get; set; }
+        public DateTime dateEstimated { get; set; }
 
         [Display(Name = "table_order_dateDone", ResourceType = typeof(Ressources.StringsDispalyed))]
         public DateTime? dateDone { get; set; }
