@@ -14,20 +14,9 @@ namespace StorageCompany.Controllers
             return View("Index");
         }
 
-        //
-        // GET: /Order/
-        public ActionResult Order()
+        public ActionResult Popup()
         {
-            ViewBag.Message = Ressources.StringsDispalyed.title_order;
-            return View("Order");
-        }
-
-        //
-        // GET: /Inventory/
-        public ActionResult Inventory()
-        {
-            ViewBag.Message = Ressources.StringsDispalyed.title_inventory;
-            return View("Inventory");
+            return View();
         }
 
     }

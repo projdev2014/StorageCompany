@@ -1,5 +1,6 @@
 ﻿using StorageCompany.DataAccessLayer;
 using StorageCompany.Models;
+using StorageCompany.Models.StoredProcedure;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -66,10 +67,14 @@ namespace StorageCompany.Controllers
 
         public ActionResult Step2_MovementIn()
         {
-            Order order = (Order) Session["order"];
-            ViewBag.storageId = new SelectList(dbo.getListEmptyStorage(order.dateEstimated), "id", "name");
+            List<ItemIn> listItemIn = (List<ItemIn>)Session["listItemIn"];
+            if (listItemIn == null)
+            {
+                listItemIn = new List<ItemIn>();
+            }
+            ViewBag.storageId = new SelectList(db.Storage, "id", "name");
             ViewBag.productId = new SelectList(db.Product, "id", "name");
-            return View("Step2_MovementIn");
+            return View(listItemIn);
         }
 
         public ActionResult Step2_MovementOut()
@@ -94,5 +99,57 @@ namespace StorageCompany.Controllers
         {
             return View("Step3_Confirmation");
         }
+
+        // CRUD ItemIn
+        public ActionResult CreateItemIn()
+        {
+            Order order = (Order)Session["order"];
+            List<ItemIn> list = (List<ItemIn>)Session["listItemIn"];
+            List<Storage> listStorage = dbo.getListEmptyStorage(order.dateEstimated);
+            listStorage = dbo.subList(listStorage, list);
+            ViewBag.storageId = new SelectList(listStorage, "id", "name");
+            ViewBag.productId = new SelectList(db.Product, "id", "name");
+
+            if (Request.IsAjaxRequest()) {     
+                return PartialView("CreateItemIn");
+            }
+
+            return View();
+        }
+
+        // POST: /User/Create
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CreateItemIn([Bind(Include="id,timeExpire,productId,storageId")] ItemIn item)
+        {
+            if (ModelState.IsValid)
+            {
+                List<ItemIn> listItemIn = (List<ItemIn>) Session["listItemIn"];
+                if (listItemIn == null)
+                {
+                    listItemIn = new List<ItemIn>();
+                }
+                listItemIn.Add(item);
+                Session["listItemIn"] = listItemIn;
+                return RedirectToAction("Step2_MovementIn");
+            }
+            Order order = (Order)Session["order"];
+            List<ItemIn> list = (List<ItemIn>)Session["listItemIn"];
+            List<Storage> listStorage = dbo.getListEmptyStorage(order.dateEstimated);
+            listStorage = dbo.subList(listStorage, list);
+            ViewBag.storageId = new SelectList(listStorage, "id", "name", item.storageId);
+            ViewBag.productId = new SelectList(db.Product, "id", "name", item.productId);
+            return View(item);
+        }
+
+         public ActionResult DeleteItemIn(ItemIn item)
+        {
+            List<ItemIn> listItemIn = (List<ItemIn>)Session["listItemIn"];
+            listItemIn.Remove(item);
+            Session["listItemIn"] = listItemIn;
+            return RedirectToAction("Index");
+        }
+
+
 	}
 }

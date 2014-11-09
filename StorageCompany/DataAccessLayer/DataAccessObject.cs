@@ -156,7 +156,25 @@ namespace StorageCompany.DataAccessLayer
                 });
             }
             return list;
-        } 
+        }
+
+        public List<Storage> subList(List<Storage> list, List<ItemIn> listItemIn)
+        {
+            if (listItemIn != null)
+            {
+                foreach (ItemIn i in listItemIn)
+                {
+                    foreach (Storage s in list)
+                    {
+                        if (s.id == i.storageId)
+                        {
+                            list.Remove(s);
+                        }
+                    }
+                }
+            }
+            return list;
+        }
     }
     
 }
