@@ -98,9 +98,14 @@ namespace StorageCompany.Controllers
             return View("Step2_MovementInternal");
         }
 
-        public ActionResult Step3_Confirmation()
+        public ActionResult Step3_MovementIn()
         {
-            return View("Step3_Confirmation");
+            List<ItemIn> listItemIn = (List<ItemIn>)Session["listItemIn"];
+            if (listItemIn != null)
+            {
+                return View();
+            }
+            return RedirectToAction("Step2_MovementIn");
         }
 
         // GET: /Order/CreateItemIn
@@ -158,6 +163,62 @@ namespace StorageCompany.Controllers
             return RedirectToAction("Step2_MovementIn");
         }
 
+        public ActionResult createMovementIn(){
+            Order o = (Order) Session["Order"];
+
+            // Enregistrement et récupération de l'id
+            using (var context = new StorageEntityDataModel())
+            {
+                var order = new Order();
+                order.accountRecipientId = o.accountRecipientId;
+                order.accountSenderId = o.accountSenderId;
+                order.dateEstimated = o.dateEstimated;
+                order.dateAsked = DateTime.Now;
+                order.intern = false;
+                context.Order.Attach(order);
+                context.Order.Add(order);
+                context.SaveChanges();
+                // récupération de l'id
+                o.id = order.id;
+            }
+            
+            
+            List<ItemIn> listItemIn = (List<ItemIn>)Session["listItemIn"];
+            List<ItemIn> newListItemIn = new List<ItemIn>(listItemIn);
+            // Createion des items + mouvements pour chaque item de la listItemIn
+            foreach (ItemIn item in listItemIn)
+            {
+                // Création de l'item
+                Item i = new Item();
+                i.timeExpire = item.timeExpire;
+                i.productId = item.productId;
+                // Sauvegarde de l'item dans la db
+                db.Item.Add(i);
+                db.SaveChanges();
+                
+                // Création du mouvement
+                Movement m = new Movement();
+                m.dateDone = o.dateEstimated;
+                m.itemId = i.id;
+                m.orderId = o.id;
+                m.statusId = 1; // A sa création le mouvement a le statut "à faire";
+                m.storageId = item.storageId;
+                
+                // Sauvegarde du mouvement dans la db
+                db.Movement.Add(m);
+                db.SaveChanges();
+
+            }
+            Session["order"] = null;
+            Session["listItemIn"] = null;
+            return RedirectToAction("Step1_Order");
+        }
+
+        public ActionResult annuleMovementIn(){
+            Session["order"] = null;
+            Session["listItemIn"] = null;
+            return RedirectToAction("Step1_Order");
+        }
 
 	}
 }

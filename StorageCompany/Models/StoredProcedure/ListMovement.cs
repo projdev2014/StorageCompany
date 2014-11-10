@@ -28,7 +28,7 @@ namespace StorageCompany.Models.StoredProcedure
 
         [Display(Name = "table_movement_dateDone", ResourceType = typeof(Ressources.StringsDispalyed))]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yy HH:mm}")]
-        public System.DateTime dateDone { get; set; }
+        public Nullable<System.DateTime> dateDone { get; set; }
 
         [Display(Name = "table_movement_timeExpire", ResourceType = typeof(Ressources.StringsDispalyed))]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yy}")]

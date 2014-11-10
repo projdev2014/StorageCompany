@@ -58,10 +58,19 @@ namespace StorageCompany.DataAccessLayer
 
         public List<ListOrder> getListOrder()
         {
+            DateTime? a;
             DataSet ds = fillListOrder();
             List<ListOrder> list = new List<ListOrder>();
             foreach (DataRow dr in ds.Tables[0].Rows)
             {
+                if (dr[6].ToString() == null || dr[6].ToString() == "")
+                {
+                    a = null;
+                }
+                else
+                {
+                    a = DateTime.Parse(dr[6].ToString());
+                }
                 list.Add(new ListOrder
                 {
                     id = int.Parse(dr[0].ToString()),
@@ -70,7 +79,7 @@ namespace StorageCompany.DataAccessLayer
                     recipientName = dr[3].ToString(),
                     dateAsked = DateTime.Parse(dr[4].ToString()),
                     dateEstimated = DateTime.Parse(dr[5].ToString()),
-                    dateDone = DateTime.Parse(dr[6].ToString())
+                    dateDone = a
                 });
             }
             return list;
@@ -86,10 +95,27 @@ namespace StorageCompany.DataAccessLayer
 
         public List<ListMovement> getListMovement()
         {
+            DateTime? a, b;
             DataSet ds = fillListMovement();
             List<ListMovement> list = new List<ListMovement>();
             foreach (DataRow dr in ds.Tables[0].Rows)
             {
+                if (dr[6].ToString() == null)
+                {
+                    a = null;
+                }
+                else
+                {
+                    a = DateTime.Parse(dr[6].ToString());
+                }
+                if (dr[7].ToString() == null)
+                {
+                    b = null;
+                }
+                else
+                {
+                    b = DateTime.Parse(dr[7].ToString());
+                }
                 list.Add(new ListMovement
                 {
                     id = int.Parse(dr[0].ToString()),
@@ -98,8 +124,8 @@ namespace StorageCompany.DataAccessLayer
                     product = dr[3].ToString(),
                     newStorage = dr[4].ToString(),
                     oldStorage = dr[5].ToString(),
-                    dateDone = DateTime.Parse(dr[6].ToString()),
-                    timeExpire = DateTime.Parse(dr[7].ToString())
+                    dateDone = a,
+                    timeExpire = b
 
                 });
             }

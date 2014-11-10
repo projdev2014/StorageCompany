@@ -1,0 +1,58 @@
+﻿
+@{
+    StorageEntityDataModel db = new StorageEntityDataModel();
+    ViewBag.Title = "Step3_Confirmation";
+    Order order = (Order)Session["order"];
+    order.Account = db.Account.Find(order.accountSenderId);
+    order.Account1 = db.Account.Find(order.accountRecipientId);
+    List<ItemIn> listItemIn = (List<ItemIn>)Session["listItemIn"];
+}
+
+<div class=" crumbs">
+    <a href="#" class="active"><i class="glyphicon glyphicon glyphicon-record"></i> Step 1 : Order</a>
+    <a href="#" class="active"><i class="glyphicon glyphicon glyphicon-record"></i> Step 2 : Item</a>
+    <a href="#" class="active"><i class="glyphicon glyphicon glyphicon-record"></i> Step 3 : Confirm</a>
+</div>
+
+<h2>Confirmation de la commande</h2>
+
+<div class="form-group">
+    <p>
+        <label>Envoyeur : </label>
+        @order.Account.name
+    </p>
+    <p>
+        <label>Récepteur : </label> 
+        @order.Account1.name
+    </p>
+    <p>
+        <label>Date de la réception : </label> 
+        @order.dateEstimated.ToString("dd MMMM yyyy")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                Produit
+            </th>
+            <th>
+                Emplacement
+            </th>
+        </tr>
+
+        @foreach (var item in @listItemIn)
+        {
+            <tr>
+                <td>
+                    @item.Product.name
+                </td>
+                <td>
+                    @item.Storage.name
+                </td>
+            </tr>
+        }
+    </table>
+
+    @Html.ActionLink("Create", "createMovementIn", null, new { @class = "btn btn-primary" })
+    &nbsp; &nbsp;
+    @Html.ActionLink("Annuler", "annuleMovementIn", null, new { @class = "btn btn-default" })
+</div>
