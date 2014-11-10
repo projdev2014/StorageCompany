@@ -72,8 +72,11 @@ namespace StorageCompany.Controllers
             {
                 listItemIn = new List<ItemIn>();
             }
-            ViewBag.storageId = new SelectList(db.Storage, "id", "name");
-            ViewBag.productId = new SelectList(db.Product, "id", "name");
+            foreach (ItemIn item in listItemIn)
+            {
+                item.Product = db.Product.Find(item.productId);
+                item.Storage = db.Storage.Find(item.storageId);
+            }
             return View(listItemIn);
         }
 
@@ -100,24 +103,22 @@ namespace StorageCompany.Controllers
             return View("Step3_Confirmation");
         }
 
-        // CRUD ItemIn
+        // GET: /Order/CreateItemIn
         public ActionResult CreateItemIn()
         {
+            var model = new ItemIn();
             Order order = (Order)Session["order"];
             List<ItemIn> list = (List<ItemIn>)Session["listItemIn"];
-            List<Storage> listStorage = dbo.getListEmptyStorage(order.dateEstimated);
+            List<Storage> listStorage = new List<Storage>();
+            listStorage = dbo.getListEmptyStorage(order.dateEstimated);
             listStorage = dbo.subList(listStorage, list);
             ViewBag.storageId = new SelectList(listStorage, "id", "name");
             ViewBag.productId = new SelectList(db.Product, "id", "name");
 
-            if (Request.IsAjaxRequest()) {     
-                return PartialView("CreateItemIn");
-            }
-
-            return View();
+            return PartialView();
         }
 
-        // POST: /User/Create
+        // POST: /Order/CreateItemIn
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult CreateItemIn([Bind(Include="id,timeExpire,productId,storageId")] ItemIn item)
@@ -142,12 +143,19 @@ namespace StorageCompany.Controllers
             return View(item);
         }
 
-         public ActionResult DeleteItemIn(ItemIn item)
+         public ActionResult DeleteItemIn(int id)
         {
             List<ItemIn> listItemIn = (List<ItemIn>)Session["listItemIn"];
-            listItemIn.Remove(item);
-            Session["listItemIn"] = listItemIn;
-            return RedirectToAction("Index");
+            List<ItemIn> newListItemIn = new List<ItemIn>(listItemIn);
+            foreach (ItemIn item in listItemIn)
+            {
+                if (item.storageId == id)
+                {
+                    newListItemIn.Remove(item);
+                }
+            }
+            Session["listItemIn"] = newListItemIn;
+            return RedirectToAction("Step2_MovementIn");
         }
 
 

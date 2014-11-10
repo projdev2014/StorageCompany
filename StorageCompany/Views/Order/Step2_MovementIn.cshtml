@@ -1,10 +1,20 @@
-﻿@model IEnumerable<StorageCompany.Models.StoredProcedure.ItemIn>
+﻿@model IEnumerable<ItemIn>
 
 @{
     ViewBag.Title = "Step2_Movement";
 }
 <script src="~/Content/Scripts/jquery-ui.min-1.11.js"></script>
 <link href="~/Content/themes/base/jquery-ui.css" rel="stylesheet" />
+
+<div id="dialog-confirm" style="display: none">
+    <p>
+        <span class="ui-icon ui-icon-alert" style="float: left; margin: 0 7px 20px 0;"></span>
+        Are you sure to delete?
+    </p>
+</div>
+
+<div id="dialog-edit" style="display: none">
+</div>
 
 <div class=" crumbs">
     <a href="#" class="active"><i class="glyphicon glyphicon glyphicon-record"></i> Step 1 : Order</a>
@@ -15,13 +25,10 @@
 <h2>Encodage des Articles</h2>
 <h3>Mouvement Entrant</h3>
 
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
-    <p>
-        @Html.ActionLink("Add New", "CreateItemIn", null, new { id = "lnkCreate" })
-    </p>
-    
+<p>
+    @Html.ActionLink("Add New", "CreateItemIn", null, new { id = "lnkCreate" })
+</p>
+
     <table class="table">
         <tr>
             <th>
@@ -49,29 +56,29 @@
                 @Html.DisplayFor(modelItem => item.timeExpire)
             </td>
             <td>
-                @Html.ActionLink("Delete", "DeleteItemIn", new { item = item }, new { @class = "lnkDelete" })
+                @Html.ActionLink("Delete", "DeleteItemIn", new { id = item.storageId }, new { @class = "lnkDelete" })
             </td>
         </tr>
     }
-    <tr id="dialog-create" style="display: none">
-    </tr>
-
     </table>
 
-}
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Next Step" class="btn btn-default" />
+        </div>
+    </div>
+
+
 @section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-    
-    <script>
+<script>
     $(document).ready(function () {
         var url = "";
-
-        $("#dialog-create").dialog({
+        $("#dialog-edit").dialog({
             title: 'Create Item',
             autoOpen: false,
             resizable: false,
             width: 400,
-            show: { effect: 'drop', direction: "up" },
+            show: { effect: 'drop', direction: 'up' },
             modal: true,
             draggable: true,
             open: function (event, ui) {
@@ -79,12 +86,38 @@
                 $(this).load(url);
             }
         });
+        $("#dialog-confirm").dialog({
+            autoOpen: false,
+            resizable: false,
+            height: 170,
+            width: 350,
+            show: { effect: 'drop', direction: "up" },
+            modal: true,
+            draggable: true,
+            open: function (event, ui) {
+                $(".ui-dialog-titlebar-close").hide();
 
-        $("#lnkCreate]").live("click", function () {
+            },
+            buttons: {
+                "OK": function () {
+                    $(this).dialog("close");
+                    window.location.href = url;
+                },
+                "Cancel": function () {
+                    $(this).dialog("close");
+                }
+            }
+        });
+
+        $("#lnkCreate").live("click", function (e) {
+            //e.preventDefault(); //use this or return false
             url = $(this).attr('href');
-            $("#dialog-create").dialog('open');
+            $("#dialog-edit").dialog('open');
+
             return false;
         });
+
     });
+    
 </script>
 }

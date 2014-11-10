@@ -8,8 +8,10 @@ namespace StorageCompany
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Content/Scripts/jquery-{version}.js",
-                        "~/Content/Scripts/jquery-ui.min-{version}.js"));
+                        "~/Content/Scripts/jquery-{version}.js"));
+            
+            bundles.Add(new ScriptBundle("~/bundles/jqueryui").Include(
+                        "~/Content/Scripts/jquery-ui-{version}.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Content/Scripts/bootstrap.js",

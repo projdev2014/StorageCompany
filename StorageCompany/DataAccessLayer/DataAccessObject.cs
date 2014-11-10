@@ -9,12 +9,12 @@ using StorageCompany.Models;
 
 namespace StorageCompany.DataAccessLayer
 {
-    
+
     public class DataAccessObject
     {
         SqlConnection myConnection;
         SqlCommand myCommand;
-        SqlDataReader myDataReader;
+        //SqlDataReader myDataReader;
 
         public DataAccessObject()
         {
@@ -100,7 +100,7 @@ namespace StorageCompany.DataAccessLayer
                     oldStorage = dr[5].ToString(),
                     dateDone = DateTime.Parse(dr[6].ToString()),
                     timeExpire = DateTime.Parse(dr[7].ToString())
-                    
+
                 });
             }
             return list;
@@ -140,10 +140,12 @@ namespace StorageCompany.DataAccessLayer
             List<Storage> list = new List<Storage>();
             foreach (DataRow dr in ds.Tables[0].Rows)
             {
-                if(dr[2].ToString() == null)
+                if (dr[2].ToString() == null)
                 {
                     a = null;
-                } else {
+                }
+                else
+                {
                     a = int.Parse(dr[2].ToString());
                 }
                 list.Add(new Storage
@@ -160,6 +162,7 @@ namespace StorageCompany.DataAccessLayer
 
         public List<Storage> subList(List<Storage> list, List<ItemIn> listItemIn)
         {
+            List<Storage> newlist = new List<Storage>(list);
             if (listItemIn != null)
             {
                 foreach (ItemIn i in listItemIn)
@@ -168,13 +171,13 @@ namespace StorageCompany.DataAccessLayer
                     {
                         if (s.id == i.storageId)
                         {
-                            list.Remove(s);
+                            newlist.Remove(s);
                         }
                     }
                 }
             }
-            return list;
+            return newlist;
         }
     }
-    
+
 }

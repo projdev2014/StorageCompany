@@ -11,6 +11,7 @@ namespace StorageCompany.Models.StoredProcedure
         public int id { get; set; }
 
         [Display(Name = "table_item_timeExpire", ResourceType = typeof(Ressources.StringsDispalyed))]
+        [DisplayFormat(ApplyFormatInEditMode = false, DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime? timeExpire { get; set; }
 
         [Display(Name = "table_product_name", ResourceType = typeof(Ressources.StringsDispalyed))]
