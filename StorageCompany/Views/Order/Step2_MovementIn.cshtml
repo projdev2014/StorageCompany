@@ -3,15 +3,6 @@
 @{
     ViewBag.Title = "Step2_Movement";
 }
-<script src="~/Content/Scripts/jquery-ui.min-1.11.js"></script>
-<link href="~/Content/themes/base/jquery-ui.css" rel="stylesheet" />
-
-<div id="dialog-confirm" style="display: none">
-    <p>
-        <span class="ui-icon ui-icon-alert" style="float: left; margin: 0 7px 20px 0;"></span>
-        Are you sure to delete?
-    </p>
-</div>
 
 <div id="dialog-edit" style="display: none">
 </div>
@@ -56,7 +47,7 @@
                 @Html.DisplayFor(modelItem => item.timeExpire)
             </td>
             <td>
-                @Html.ActionLink("Delete", "DeleteItemIn", new { id = item.storageId }, new { @class = "lnkDelete" })
+                @Html.ActionLink("Delete", "DeleteItemIn", new { id = item.storageId })
             </td>
         </tr>
     }
@@ -66,54 +57,37 @@
 
 
 @section Scripts {
-<script>
+
+<script type="text/javascript">
+    
+
     $(document).ready(function () {
+
         var url = "";
+
         $("#dialog-edit").dialog({
             title: 'Create Item',
             autoOpen: false,
             resizable: false,
             width: 400,
+            height: 250,
             show: { effect: 'drop', direction: 'up' },
             modal: true,
-            draggable: true,
+            draggable: false,
             open: function (event, ui) {
                 $(".ui-dialog-titlebar-close").hide();
                 $(this).load(url);
             }
-        });
-        $("#dialog-confirm").dialog({
-            autoOpen: false,
-            resizable: false,
-            height: 170,
-            width: 350,
-            show: { effect: 'drop', direction: "up" },
-            modal: true,
-            draggable: true,
-            open: function (event, ui) {
-                $(".ui-dialog-titlebar-close").hide();
-
-            },
-            buttons: {
-                "OK": function () {
-                    $(this).dialog("close");
-                    window.location.href = url;
-                },
-                "Cancel": function () {
-                    $(this).dialog("close");
-                }
-            }
+            
         });
 
-        $("#lnkCreate").live("click", function (e) {
-            //e.preventDefault(); //use this or return false
+        $("#lnkCreate").click(function () {
             url = $(this).attr('href');
             $("#dialog-edit").dialog('open');
-
             return false;
         });
 
     });
-    
 </script>
+
 }

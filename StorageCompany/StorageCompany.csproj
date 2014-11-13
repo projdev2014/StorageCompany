@@ -296,7 +296,6 @@
     <Content Include="Views\Order\Step2_MovementInternal.cshtml" />
     <Content Include="Views\Order\Step3_MovementIn.cshtml" />
     <Content Include="Views\Order\CreateItemIn.cshtml" />
-    <Content Include="Views\Home\Popup.cshtml" />
     <Content Include="Content\Scripts\jquery-2.1.1.min.map" />
   </ItemGroup>
   <ItemGroup>

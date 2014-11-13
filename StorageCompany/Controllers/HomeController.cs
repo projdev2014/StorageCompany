@@ -14,10 +14,5 @@ namespace StorageCompany.Controllers
             return View("Index");
         }
 
-        public ActionResult Popup()
-        {
-            return View();
-        }
-
     }
 }

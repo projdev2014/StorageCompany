@@ -180,3 +180,25 @@ input[type="checkbox"].input-validation-error {
 	box-shadow: 0 0 0 1px #ccc;
 	font-weight: bold;
 }
+
+/* dialog jquery-ui*/
+.ui-widget {
+    font-family: Verdana,Arial,sans-serif;
+    font-size: .8em;
+    padding: 3px;
+    margin : 2px;
+    border: 1px solid black;
+    background: #F9F9F9;
+}
+
+.ui-dialog-content {
+    padding-top: 30px;
+    padding: 15px;
+}
+
+.ui-dialog-title {
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    padding: 10px;
+}

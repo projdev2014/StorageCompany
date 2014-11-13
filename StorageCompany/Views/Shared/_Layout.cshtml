@@ -6,9 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="~/Content/Images/warehouse.png" type="image/x-icon">
     <title>@ViewBag.Title</title>
-    <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js?ver=1.4.2'></script>
     @Styles.Render("~/bundles/css")
     @Scripts.Render("~/bundles/modernizr")
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
 </head>
 <body>
     <div class="container">
@@ -86,7 +87,7 @@
         </div><!-- body-content -->
     </div><!-- container -->
 
-    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryui")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 </body>
